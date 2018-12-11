@@ -19,6 +19,14 @@ public class PublicController {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
+    @RequestMapping(value = "/home", method = RequestMethod.POST)
+    public ResponseEntity home(HttpServletRequest httpServletRequest, @RequestBody Map<String, Object> data){
+        log.info("Ini Home");
+        log.info("Data: " + data);
+
+        return ResponseEntity.ok(null);
+    }
+
     @RequestMapping(value = "/webhook", method = RequestMethod.POST)
     public ResponseEntity webhook(HttpServletRequest httpServletRequest, @RequestBody Map<String, Object> data){
         log.info("Ini webhook");
